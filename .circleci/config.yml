@@ -1,0 +1,40 @@
+version: 2.1
+
+commands:
+  build-images:
+    steps:
+      - run:
+          name: Build images
+          command: ./.circleci/image_names.sh | xargs -I % docker build % -t cszatma/%
+
+jobs:
+  build-test:
+    machine: true
+    steps:
+      - checkout
+      - build-images
+  build-push:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Docker login
+          command: echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKERHUB_USER --password-stdin
+      - build-images
+      - run:
+          name: Push images
+          command: ./.circleci/image_names.sh | xargs -I % docker push cszatma/%
+
+workflows:
+  build-test:
+    jobs:
+      - build-test:
+          filters:
+            branches:
+              ignore: master
+  build-push:
+    jobs:
+      - build-push:
+          filters:
+            branches:
+              only: master
