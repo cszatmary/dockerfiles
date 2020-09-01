@@ -6,7 +6,7 @@
 BLACKLIST=".circleci README.md"
 NAMES=$(git diff --name-only HEAD^ HEAD | cut -d '/' -f 1)
 for NAME in $NAMES; do
-    if ! $(echo "$BLACKLIST" | grep -F -q -w "$NAME"); then
+    if ! echo "$BLACKLIST" | grep -F -q -w "$NAME"; then
         echo "$NAME"
     fi
 done
