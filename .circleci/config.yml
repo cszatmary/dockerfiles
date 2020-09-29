@@ -9,12 +9,14 @@ commands:
 
 jobs:
   build-test:
-    machine: true
+    docker:
+      - image: cimg/base:stable
     steps:
       - checkout
       - build-images
   build-push:
-    machine: true
+    docker:
+      - image: cimg/base:stable
     steps:
       - checkout
       - run:
@@ -38,3 +40,4 @@ workflows:
           filters:
             branches:
               only: master
+
