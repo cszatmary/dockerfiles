@@ -3,6 +3,8 @@ version: 2.1
 commands:
   build-images:
     steps:
+      - setup_remote_docker:
+          version: 19.03.13
       - run:
           name: Build images
           command: ./.circleci/image_names.sh | xargs -I % docker build % -t cszatma/%
