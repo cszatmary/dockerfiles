@@ -32,3 +32,4 @@ RUN curl https://cli-assets.heroku.com/install.sh | sh
 RUN cd /usr/local/bin && \
     sudo wget --progress=bar:force:noscroll https://github.com/Shopify/ejson/releases/download/${EJSON_VERSION}/linux-amd64 -O ejson && \
     sudo chmod +x ejson
+

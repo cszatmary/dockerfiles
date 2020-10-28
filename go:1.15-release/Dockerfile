@@ -18,3 +18,4 @@ RUN wget --progress=bar:force:noscroll https://golang.org/dl/go${GO_VERSION}.lin
 RUN cd /usr/local/bin && \
     wget --progress=bar:force:noscroll https://github.com/Shopify/ejson2env/releases/download/${EJSON2ENV_VERSION}/linux-amd64 -O ejson2env && \
     chmod +x ejson2env
+

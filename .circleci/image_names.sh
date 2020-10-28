@@ -6,7 +6,8 @@
 BLACKLIST=".circleci README.md"
 NAMES=$(git diff --name-only HEAD^ HEAD | cut -d '/' -f 1)
 for NAME in $NAMES; do
-    if ! echo "$BLACKLIST" | grep -F -q -w "$NAME"; then
+    # Make sure it's not in the blacklist and it exists
+    if ! echo "$BLACKLIST" | grep -F -q -w "$NAME" && [[ -d "$NAME" ]]; then
         echo "$NAME"
     fi
 done
