@@ -22,3 +22,4 @@ RUN wget --progress=bar:force:noscroll "https://yarnpkg.com/downloads/${YARN_VER
     rm ./yarn.tar.gz && \
     ln -s /usr/local/yarn/bin/yarn /usr/local/bin/yarn && \
  	ln -s /usr/local/yarn/bin/yarnpkg /usr/local/bin/yarnpkg
+
