@@ -13,3 +13,5 @@ RUN wget --progress=bar:force:noscroll https://github.com/cszatma/publisher/rele
 # Install vercel CLI
 RUN sudo yarn global add vercel --prefix /usr/local
 
+# Install Deno
+RUN curl -fsSL https://deno.land/x/install/install.sh | sudo DENO_INSTALL=/usr/local sh
