@@ -2,7 +2,9 @@
 FROM cimg/go:1.15
 
 # Set env vars
-ENV EJSON_VERSION=v1.2.2
+ENV EJSON_VERSION=v1.2.2 \
+	YARN_VERSION=1.22.10 \
+	SHED_VERSION=v0.1.0
 
 # Install Node 14 the latest LTS version
 # Install it manually instead of using cimg/go:1.15-node because we want node 14 not node 12
@@ -18,7 +20,6 @@ RUN curl -sSL "https://raw.githubusercontent.com/CircleCI-Public/cimg-node/maste
 	rm node.tar.xz nodeAliases.txt && \
 	sudo ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-ENV YARN_VERSION 1.22.10
 RUN curl -L -o yarn.tar.gz "https://yarnpkg.com/downloads/${YARN_VERSION}/yarn-v${YARN_VERSION}.tar.gz" && \
 	sudo tar -xzf yarn.tar.gz -C /opt/ && \
 	rm yarn.tar.gz && \
@@ -30,6 +31,8 @@ RUN curl https://cli-assets.heroku.com/install.sh | sh
 
 # Install ejson
 RUN cd /usr/local/bin && \
-    sudo wget --progress=bar:force:noscroll https://github.com/Shopify/ejson/releases/download/${EJSON_VERSION}/linux-amd64 -O ejson && \
-    sudo chmod +x ejson
+	sudo wget --progress=bar:force:noscroll https://github.com/Shopify/ejson/releases/download/${EJSON_VERSION}/linux-amd64 -O ejson && \
+	sudo chmod +x ejson
 
+# Install shed
+RUN curl -sSfL https://raw.githubusercontent.com/getshiphub/shed/master/scripts/install.sh | sudo sh -s -- -b /usr/local/bin "${SHED_VERSION}"
