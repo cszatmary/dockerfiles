@@ -1,8 +1,8 @@
-# cszatma/node:14-release
+# cszatmary/node:14-release
 FROM phusion/baseimage:bionic-1.0.0
 
 # Set env vars
-ENV NODE_VERSION=14.15.0 \
+ENV NODE_VERSION=14.15.3 \
     YARN_VERSION=1.22.10
 
 # Install any necessary packages
@@ -21,5 +21,4 @@ RUN wget --progress=bar:force:noscroll "https://yarnpkg.com/downloads/${YARN_VER
     tar -C /usr/local/yarn -xzf ./yarn.tar.gz --strip-components=1 && \
     rm ./yarn.tar.gz && \
     ln -s /usr/local/yarn/bin/yarn /usr/local/bin/yarn && \
- 	ln -s /usr/local/yarn/bin/yarnpkg /usr/local/bin/yarnpkg
-
+    ln -s /usr/local/yarn/bin/yarnpkg /usr/local/bin/yarnpkg

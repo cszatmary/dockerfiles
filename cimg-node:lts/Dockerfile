@@ -1,4 +1,4 @@
-# cszatma/cimg-node:lts
+# cszatmary/cimg-node:lts
 FROM cimg/node:lts
 
 ENV PUBLISHER_VERSION=0.0.1
