@@ -1,8 +1,8 @@
-# cszatma/go:1.15-build
+# cszatmary/go:1.15-build
 FROM golang:1.15
 
 # Set env vars
-ENV NODE_VERSION=14.15.0 \
+ENV NODE_VERSION=14.15.3 \
     REDOC_CLI_VERSION=0.10.1 \
     PATH=/usr/local/node/bin:$PATH
 

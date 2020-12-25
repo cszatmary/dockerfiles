@@ -7,7 +7,7 @@ commands:
           version: 19.03.13
       - run:
           name: Build images
-          command: ./.circleci/image_names.sh | xargs -I % docker build % -t cszatma/%
+          command: ./.circleci/image_names.sh | xargs -I % docker build % -t cszatmary/%
 
 jobs:
   build-test:
@@ -27,7 +27,7 @@ jobs:
       - build-images
       - run:
           name: Push images
-          command: ./.circleci/image_names.sh | xargs -I % docker push cszatma/%
+          command: ./.circleci/image_names.sh | xargs -I % docker push cszatmary/%
 
 workflows:
   build-test:

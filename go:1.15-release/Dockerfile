@@ -1,8 +1,8 @@
-# cszatma/go:1.15-release
+# cszatmary/go:1.15-release
 FROM phusion/baseimage:bionic-1.0.0
 
 # Set env vars
-ENV GO_VERSION=1.15.3 \
+ENV GO_VERSION=1.15.6 \
     EJSON2ENV_VERSION=v2.0.0 \
     PATH=/usr/local/lib/go/bin:$PATH
 
@@ -18,4 +18,3 @@ RUN wget --progress=bar:force:noscroll https://golang.org/dl/go${GO_VERSION}.lin
 RUN cd /usr/local/bin && \
     wget --progress=bar:force:noscroll https://github.com/Shopify/ejson2env/releases/download/${EJSON2ENV_VERSION}/linux-amd64 -O ejson2env && \
     chmod +x ejson2env
-
