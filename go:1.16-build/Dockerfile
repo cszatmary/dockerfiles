@@ -1,5 +1,5 @@
-# cszatmary/go:1.15-build
-FROM golang:1.15
+# cszatmary/go:1.16-build
+FROM golang:1.16
 
 # Set env vars
 ENV NODE_VERSION=14.16.0 \

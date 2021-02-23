@@ -2,7 +2,7 @@
 FROM phusion/baseimage:bionic-1.0.0
 
 # Set env vars
-ENV NODE_VERSION=14.15.3 \
+ENV NODE_VERSION=14.16.0 \
     YARN_VERSION=1.22.10
 
 # Install any necessary packages
