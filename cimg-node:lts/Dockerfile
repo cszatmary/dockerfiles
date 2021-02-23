@@ -1,7 +1,8 @@
 # cszatmary/cimg-node:lts
 FROM cimg/node:lts
 
-ENV PUBLISHER_VERSION=0.0.1
+ENV PUBLISHER_VERSION=0.0.1 \
+    DENO_VERSION=v1.7.5
 
 # Install publisher
 RUN wget --progress=bar:force:noscroll https://github.com/cszatma/publisher/releases/download/${PUBLISHER_VERSION}/publisher_${PUBLISHER_VERSION}_linux_x86_64.tar.gz && \
@@ -14,4 +15,4 @@ RUN wget --progress=bar:force:noscroll https://github.com/cszatma/publisher/rele
 RUN sudo yarn global add vercel --prefix /usr/local
 
 # Install Deno
-RUN curl -fsSL https://deno.land/x/install/install.sh | sudo DENO_INSTALL=/usr/local sh
+RUN curl -fsSL https://deno.land/x/install/install.sh | sudo DENO_INSTALL=/usr/local sh -s ${DENO_VERSION}

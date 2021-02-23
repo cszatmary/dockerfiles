@@ -1,8 +1,8 @@
-# cszatmary/go:1.15-release
+# cszatmary/go:1.16-release
 FROM phusion/baseimage:bionic-1.0.0
 
 # Set env vars
-ENV GO_VERSION=1.15 \
+ENV GO_VERSION=1.16 \
     EJSON2ENV_VERSION=v2.0.0 \
     PATH=/usr/local/lib/go/bin:$PATH
 
