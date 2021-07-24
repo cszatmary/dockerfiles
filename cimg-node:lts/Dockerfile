@@ -2,7 +2,7 @@
 FROM cimg/node:lts
 
 ENV PUBLISHER_VERSION=0.0.1 \
-    DENO_VERSION=v1.10.2
+    DENO_VERSION=v1.12.1
 
 # Install publisher
 RUN wget --progress=bar:force:noscroll https://github.com/cszatma/publisher/releases/download/${PUBLISHER_VERSION}/publisher_${PUBLISHER_VERSION}_linux_x86_64.tar.gz && \

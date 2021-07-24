@@ -2,7 +2,7 @@
 FROM golang:1.16
 
 # Set env vars
-ENV NODE_VERSION=14.17.0 \
+ENV NODE_VERSION=14.17.3 \
     REDOC_CLI_VERSION=0.10.1 \
     SHED_VERSION=v0.4.0 \
     PATH=/usr/local/node/bin:$PATH
