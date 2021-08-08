@@ -55,4 +55,4 @@ Make sure to include a header comment which is the full name of the image, ex: `
 
 ### Publishing images
 
-Images are automatically published to dockerhub on merges to master.
+Images are automatically published to dockerhub on merges to main.

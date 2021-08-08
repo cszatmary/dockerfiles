@@ -4,7 +4,7 @@ FROM golang:1.15
 # Set env vars
 ENV NODE_VERSION=14.17.3 \
     REDOC_CLI_VERSION=0.10.1 \
-    SHED_VERSION=v0.4.0 \
+    SHED_VERSION=v0.5.0 \
     PATH=/usr/local/node/bin:$PATH
 
 # Install node
@@ -17,4 +17,4 @@ RUN wget --progress=bar:force:noscroll "https://nodejs.org/dist/v${NODE_VERSION}
 RUN npm install -g redoc-cli@${REDOC_CLI_VERSION}
 
 # Install shed
-RUN curl -sSfL https://raw.githubusercontent.com/getshiphub/shed/master/scripts/install.sh | sh -s -- -b /usr/local/bin "${SHED_VERSION}"
+RUN curl -sSfL https://raw.githubusercontent.com/cszatmary/shed/main/scripts/install.sh | sh -s -- -b /usr/local/bin "${SHED_VERSION}"
