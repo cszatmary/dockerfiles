@@ -2,7 +2,7 @@
 FROM cimg/go:1.16-node
 
 # Set env vars
-ENV SHED_VERSION=v0.5.0
+ENV SHED_VERSION=v0.5.1
 
 # Install heroku CLI
 RUN curl https://cli-assets.heroku.com/install.sh | sh
