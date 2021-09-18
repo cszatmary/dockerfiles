@@ -1,5 +1,5 @@
-# cszatmary/cimg-go:1.15
-FROM cimg/go:1.15-node
+# cszatmary/cimg-go:1.17
+FROM cimg/go:1.17-node
 
 # Set env vars
 ENV SHED_VERSION=v0.5.1
