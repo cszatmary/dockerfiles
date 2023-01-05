@@ -4,10 +4,12 @@ commands:
   build-images:
     steps:
       - setup_remote_docker:
-          version: 19.03.13
+          version: 20.10.18
       - run:
           name: Build images
-          command: ./.circleci/image_names.sh | xargs -I % docker build % -t cszatmary/%
+          command: |
+            export DOCKER_BUILDKIT=1
+            ./.circleci/image_names.sh | xargs -I % docker build % -t cszatmary/%
 
 jobs:
   build-test:
@@ -39,6 +41,7 @@ workflows:
   build-push:
     jobs:
       - build-push:
+          context: cszatmary-global
           filters:
             branches:
               only: main
