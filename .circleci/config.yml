@@ -39,6 +39,7 @@ workflows:
   build-push:
     jobs:
       - build-push:
+          context: cszatmary-global
           filters:
             branches:
               only: main
