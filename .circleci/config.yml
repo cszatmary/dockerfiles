@@ -4,12 +4,12 @@ commands:
   build-images:
     steps:
       - setup_remote_docker:
-          version: 20.10.18
+          version: 20.10.23
       - run:
           name: Build images
           command: |
             export DOCKER_BUILDKIT=1
-            ./.circleci/image_names.sh | xargs -I % docker build % -t cszatmary/%
+            ./.circleci/image_names.sh | xargs -t -I % docker build % -t cszatmary/%
 
 jobs:
   build-test:
