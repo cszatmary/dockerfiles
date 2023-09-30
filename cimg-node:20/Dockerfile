@@ -1,7 +1,7 @@
 # cszatmary/cimg-node:20
 FROM cimg/node:20.7
 
-ENV DENO_VERSION=v1.29.0
+ENV DENO_VERSION=v1.37.1
 RUN curl -fsSL https://deno.land/x/install/install.sh | sudo DENO_INSTALL=/usr/local sh -s ${DENO_VERSION} && \
     # smoke test
     deno --version
